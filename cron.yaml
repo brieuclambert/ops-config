@@ -19,8 +19,3 @@ cron:
   url: /send-dashboard-to-slack
   schedule: every day 09:00
   target: slack-data
-
-- description: "Parse all new emails in salesforce and find adresses of new contacts"
-  url: /contacts-to-salesforce
-  schedule: every day 09:00
-  target: contacts-to-salesforce
