@@ -1,0 +1,26 @@
+cron:
+- description: "Fetch all ongoing clients from Salesforce"
+  url: /jobs/clients
+  schedule: every 2 hours
+
+- description: "synchronize all updated time entries with salesforce"
+  url: /jobs/queue
+  schedule: every 5 minutes from 08:00 to 21:00
+
+- description: "check all new leads in Salesforce and try to find an account where the domain matches. If the domain matches, update the lead to the proper account"
+  url: /leads
+  schedule: every day 09:00
+
+- description: "compute the time consumned by clients every day "
+  url: /jobs/clients/update-consummed-time
+  schedule: every day 01:00
+
+- description: "send a dashboard to slack"
+  url: /send-dashboard-to-slack
+  schedule: every day 09:00
+  target: slack-data
+
+- description: "Parse all new emails in salesforce and find adresses of new contacts"
+  url: /contacts-to-salesforce
+  schedule: every day 09:00
+  target: contacts-to-salesforce
