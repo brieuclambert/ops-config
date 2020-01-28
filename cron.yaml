@@ -19,3 +19,8 @@ cron:
   url: /send-dashboard-to-slack
   schedule: every day 09:00
   target: slack-data
+
+- description: "Update all accounts that must sync to Churn Zero"
+  url: /update-parent-account
+  schedule: every day 09:00
+  target: ops-helper
