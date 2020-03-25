@@ -3,6 +3,10 @@ cron:
   url: /jobs/clients
   schedule: every 2 hours
 
+- description: "Fetch all ongoing contacts from Salesforce"
+  url: /jobs/contacts
+  schedule: every day 02:00
+
 - description: "synchronize all updated time entries with salesforce"
   url: /jobs/queue
   schedule: every 5 minutes from 08:00 to 21:00
